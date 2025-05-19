@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Climate</title>
     <link rel="stylesheet" href = "styles.css">
     <link rel="stylesheet" href = "fonts.css">
 </head>
 <body>
-    <div>
+    <div class="container">
+        <h1 id="titulo">SIMPLE WEATHER APP</h1>
         <div class="inputs">
-            <h1>SIMPLE WEATHER APP</h1>
             <input type="text" id="texto" placeholder="Search for a city">
-            <input type="submit" id="boton" value="Submit">
+            <button id = "boton">
+                <span>SUBMIT</span>
+            </button>
             <p id="error"></p>
         </div>
         
@@ -20,7 +22,6 @@
             <ul class="ciudades"></ul>
         </div>
     </div>
-    <div></div>
 
     <script src="code.js"></script>
 </body>

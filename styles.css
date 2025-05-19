@@ -1,16 +1,24 @@
 body{
     margin: 0;
     font-family: fuente1;
+    background-color: #000000;
 }
 
+*{
+    box-sizing: border-box;
+}
 .ciudades{
-    display: flex;
-    width: 100vw;
-    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 350px);
+    max-width: 75vw;
+    margin: 20px auto;
     gap: 30px;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
+#error{
+    display: none;
+}
 h1{
     font-size: 50px;
 }
@@ -19,11 +27,15 @@ p{
     font-size: 20px;
     color: rgb(90, 92, 112);
 }
+
+/* CARDS */
+
 .pais{
-    background-color: rgb(255, 169, 112);
+    background-color: rgb(93 24 220);
     border-radius: 12px;
     font-size: 15px;
     padding: 5px;
+    color: rgb(224, 224, 224);
 }
 
 .imagen{
@@ -31,14 +43,141 @@ p{
     height: 150px;
 }
 .elemento{
-    height: 400px;
-    width: 300px;
+    position: relative;
+    height: 450px;
     border: 1px solid black;
-    background-color: white;
+    background-color: rgb(224, 224, 224);
     border-radius: 20px;
     padding: 20px;
     list-style: none;
     display: flex;
     flex-direction: column; 
+}
+
+.elemento::after{
+    content: '';
+    width: 90%;
+    height: 50px;
+    position: absolute;
+    bottom: -12px;
+    left: 5%;
+    z-index: -1;
+    opacity: 0.3;
+    border-radius: 20px;
+    background: rgb(143, 83, 255);
+}
+
+/* INPUTS */
+
+.inputs{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+/* H1 */
+
+#titulo{
+    color: white;
+    text-align: center;
+}
+/* BOTON */
+
+button {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: rgb(204, 204, 204);
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+button:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+/* INPUT */
+
+#texto{
+    background-color: #3D3D3D;;
+    border: none;
+    width: 25vw;
+    height: 3.5vh;
+    border-radius: 12px;
+    outline: none;
+    padding: 12px;
+    border: 1px solid transparent;
+    box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+    color: rgb(170, 170, 170);
+}
+
+#texto:focus-within{
+    background: #464646;
+    border-color: gray;
+}
+
+#texto:hover {
+    border-color: gray;
+}
+
+#texto::content{
+    margin-left: 50px;
+}
+
+/* MOBILE */
+
+
+@media screen and (max-width: 500px){
+    .inputs{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #texto{
+        width: 75vw;
+        height: 5vh;
+    }
+
+    .elemento{
+        height: 330px;
+        margin: 0;
+        gap: 20px;
+    }
+    .ciudades{
+        grid-template-columns: 300px;
+        max-width: 100vw;
+        padding: 0px;
+    }
+
+    .imagen{
+        width: 100px;
+        height: 100px;
+    }
+
+    .temp,.ciudad, .imagen, .descripcion{
+        margin: 0;
+    }
+
+    #error{
+        padding: 20px;
+        text-align: center;
+    }
+
 }
 
