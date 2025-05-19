@@ -45,7 +45,7 @@ This project uses an API key to fetch live weather data. For security reasons, t
   1. Open the script.js file
   
   2. Find this line:
-     #### const apikey = "";
+      ```js const apikey = ""; ```
      
   4. Paste your key like this:
-     #### const apikey = "YOUR_API_KEY_HERE";
+     ```js const apikey = "YOUR_API_KEY_HERE"; ```
